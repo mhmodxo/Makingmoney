@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Payment getway form design in Hindi</title>
+	<link rel="stylesheet" type="text/css" href="payment.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+
+<header>
+	<div class="logo1">
+		<div class="logo2">
+	</div>
+		</div>
+	<div class="logo3">
+		<a class="logo4" href="#" >מרוויח כסף</a>
+	</div>
+</header>
+
+
+<div class="wolfff">
+	<div class="wolfteam1">
+		<div class="mywolf">
+			<h2>للتسجيل في الكورس</h2>
+		</div>
+	<div class="container">
+		<div class="left">
+			<h3>BILLING ADDRESS</h3>
+			<form id="my-form" action="https://formspree.io/f/mzboqlap" name="person" method="post">
+				Full name
+				<input type="text" name="Full name" placeholder="Enter name" required>
+				Email
+				<input type="text" name="Email" placeholder="Enter email" required>
+
+				Address
+				<input type="text" name="Address" placeholder="Enter address">
+				
+				City
+				<input type="text" name="City" placeholder="Enter City">
+				<div id="zip">
+					<label>
+						State
+						<select>
+							<option>Choose State..</option>
+							<option>أم الفحم</option>
+							<option>الناصرة</option>
+							<option>الرينه</option>
+							<option>كفر قرع</option>
+							<option>أكسال</option>
+							<option>القدس</option>
+							<option>حيفا</option>
+							<option>العفولة</option>
+							<option>سخنين</option>
+						</select>
+					</label>
+						<label>
+						Zip code
+						<input type="number" name="Zip code" placeholder="Zip code">
+					</label>
+				</div>
+			</form>
+		</div>
+		<div class="right">
+			<h3>PAYMENT</h3>
+			<form id="my-form1" action="https://formspree.io/f/mzboqlap" name="the card" method="post">
+				Accepted Card <br>
+				<img src="image/card1.png" width="100">
+				<img src="image/card2.png" width="50">
+				<br><br>
+
+				Credit card number
+			<input type="text" name="Credit card number" placeholder="Enter card number" >
+				
+				Exp month
+				<input type="text" name="Exp month" placeholder="Enter Month">
+				<div id="zip">
+					<label>
+						Exp year
+						<select name="Exp year">
+							<option>Choose Year..</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>
+							<option>2025</option>
+						</select>
+					</label>
+						<label>
+						CVV
+						<input type="number" name="CVV" placeholder="CVV">	
+					</label>
+				</div>
+			</form>
+			<input type="submit" name="submit" value="أتمام الدفع" onclick="submitForms()"  id="my-form-button" onClick="myFunction()">
+		</div>
+		<p id="my-form-status"></p>
+	</div>
+	<div id="wolfteam2">
+		<button ONCLICK="ShowAndHide()">העברה בנקאית</button>
+		<input type="checkbox" name="checkbox" id="">
+	</div>
+	<DIV ID="SectionName" STYLE="display:none" class="show1">حسابي البنك هو بلا بلا بلا </DIV>
+	<div id="wolfteam3">
+		<button ONCLICK="ShowAndHidee()">Paypal</button>
+		<input type="checkbox" name="checkbox" id="">
+	</div>
+	<DIV ID="SectionNamee" STYLE="display:none" class="show2">my paypal is : ahmad pla pla pla </DIV>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+ var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "سنتواصل معك في اقرب وقت على gmail";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+	submitForms = function(){
+		document.getElementById("my-form").submit();
+		document.getElementById("my-form1").submit();
+	}
+</script>
+
+
+
+
+ <script>
+  function myFunction() {
+    window.location.href="http://programminghead.com";
+  }
+ </script>
+
+
+
+
+
+
+
+
+<script>
+	var form = document.getElementById("my-form");
+	   
+	   async function handleSubmit(event) {
+		 event.preventDefault();
+		 var status = document.getElementById("my-form-status");
+		 var data = new FormData(event.target);
+		 fetch(event.target.action, {
+		   method: form.method,
+		   body: data,
+		   headers: {
+			   'Accept': 'application/json'
+		   }
+		 }).then(response => {
+		   if (response.ok) {
+			 status.innerHTML = "thanks ";
+			 form.reset()
+		   } else {
+			 response.json().then(data => {
+			   if (Object.hasOwn(data, 'errors')) {
+				 status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+			   } else {
+				 status.innerHTML = "Oops! There was a problem submitting your form"
+			   }
+			 })
+		   }
+		 }).catch(error => {
+		   status.innerHTML = "Oops! There was a problem submitting your form"
+		 });
+	   }
+
+
+
+	   form.addEventListener("submit", handleSubmit)
+	   submitForms = function(){
+		document.getElementById("my-form").submit();
+		document.getElementById("my-form1").submit();
+	}
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	submitForms = function(){
+		document.getElementById("my-form").submit();
+		document.getElementById("my-form1").submit();
+	}
+	</script>
+
+
+
+<SCRIPT>
+	function ShowAndHide() {
+		var x = document.getElementById('SectionName');
+		if (x.style.display == 'none') {
+			x.style.display = 'block';
+		} else {
+			x.style.display = 'none';
+		}
+	}
+	function ShowAndHidee() {
+		var x = document.getElementById('SectionNamee');
+		if (x.style.display == 'none') {
+			x.style.display = 'block';
+		} else {
+			x.style.display = 'none';
+		}
+	}
+	</SCRIPT>
+
+
+
+
+
+
+
+
+</body>
+</html>
